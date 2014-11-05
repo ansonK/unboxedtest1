@@ -5,5 +5,8 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->
+  @resource 'users', path: '/', ->
+    @resource 'user', path: '/users/:userName'
+
 
 `export default Router`
