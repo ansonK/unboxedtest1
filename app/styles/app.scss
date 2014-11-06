@@ -15,10 +15,21 @@ html, body {
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media #{$small-only} {
+    font-size: $small-font-size;
+  }
 }
 
 h2 {
   margin-top: 0;
+}
+
+aside {
+  font-size: 0.8em;
+  color: #a0a0a0;
+  font-style: italic;
+  display: inline;
 }
 
 ul {
@@ -28,6 +39,14 @@ ul {
   li {
     margin: 0.25em;
 
+    &.repo {
+      padding: 0.25em 0.5em 0.25em 0;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+
     a {
       padding: 0.5em 2em 0.5em 0.5em;
       display: block;
@@ -36,6 +55,10 @@ ul {
     .active {
       background-color: $primary-color;
       color: white;
+
+      &:hover {
+        background-color: $primary-color;
+      }
     }
   }
 }

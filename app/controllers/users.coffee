@@ -5,12 +5,15 @@ UsersController = Ember.ArrayController.extend
   errorMessage: null
 
   actions:
-    createUser: (event) ->
-      
+    userNameOnKey: (event) ->
       if event.keyCode == 8 || Ember.isEmpty(@get('newUsername')) # backspace or empty input
         @set 'errorMessage', null
 
       if event.keyCode == 13
+        @send 'createUser'
+
+    createUser: ->
+
         @store.find('user', @get('newUsername')).then (user) =>
 
           @set 'newUsername', ''

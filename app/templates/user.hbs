@@ -1,9 +1,14 @@
 <h2>{{userName}}</h2>
 
-<p>has {{favouriteLanguage}} as their favourite language</p>
+<p>has {{favouriteLanguage}} as their favourite language across these repositories:</p>
 
 <ul>
   {{#each repositories}}
-    <li>{{name}} <span class='right'>{{language}}</span></li>
+    <li class='repo'>
+      {{name}} 
+      {{#if language}}
+        <span class='right'><aside>is written in</aside> {{language}}</span>
+      {{/if}}
+    </li>
   {{/each}}
 </ul>

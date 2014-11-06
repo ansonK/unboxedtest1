@@ -8,5 +8,6 @@ Router.map ->
   @resource 'users', path: '/', ->
     @resource 'user', path: '/users/:userName'
 
+  @resource 'users', path: '/users'
 
 `export default Router`
