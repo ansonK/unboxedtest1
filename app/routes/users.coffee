@@ -3,6 +3,6 @@
 UsersRoute = Ember.Route.extend
 
   model: ->
-    @store.find 'user'
+    @store.all 'user'
 
 `export default UsersRoute`

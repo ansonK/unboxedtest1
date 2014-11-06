@@ -1,0 +1,23 @@
+`import Ember from 'ember'`
+
+UsersController = Ember.ArrayController.extend
+  newUsername: ''
+  errorMessage: null
+
+  actions:
+    createUser: (event) ->
+      
+      if event.keyCode == 8 || Ember.isEmpty(@get('newUsername')) # backspace or empty input
+        @set 'errorMessage', null
+
+      if event.keyCode == 13
+        @store.find('user', @get('newUsername')).then (user) =>
+
+          @set 'newUsername', ''
+          @set 'errorMessage', null
+          @transitionToRoute 'user', user
+
+        , (error) =>
+          @set 'errorMessage', 'does not appear to be a valid github username'
+
+`export default UsersController`

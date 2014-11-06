@@ -1,7 +1,11 @@
-<h1>List of Github Users</h1>
+<h1>Github Users</h1>
 
 <div class='row'>
   <div class='small-4 columns'>
+    {{input-eventable placeholder='Enter github username ...' value=newUsername onKey='createUser'}}
+    {{#if errorMessage}}
+      <div class='error'>{{errorMessage}}</div>
+    {{/if}}
     <ul>
       {{#each}}
         <li>{{#link-to 'user' userName }}{{userName}}{{/link-to}}</li>
