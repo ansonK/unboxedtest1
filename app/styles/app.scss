@@ -2,6 +2,7 @@
 @import "foundation";
 
 @import "_loading";
+@import "_grid";
 
 * {
   box-sizing: border-box;
@@ -25,9 +26,11 @@ ul {
   margin: 0;
 
   li {
+    margin: 0.25em;
 
     a {
       padding: 0.5em 2em 0.5em 0.5em;
+      display: block;
     }
 
     .active {
@@ -40,4 +43,12 @@ ul {
 .error {
   color: red;
   font-size: 0.8em;
+}
+
+.users-list {
+  padding-top: 15px;
+}
+
+.right {
+  float: right;
 }

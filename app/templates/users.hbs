@@ -1,7 +1,5 @@
-<h1>Github Users</h1>
-
 <div class='row'>
-  <div class='small-4 columns'>
+  <div class='small-4 columns users-list'>
     {{input-eventable placeholder='Enter github username ...' value=newUsername onKey='createUser'}}
     {{#if errorMessage}}
       <div class='error'>{{errorMessage}}</div>
@@ -12,7 +10,7 @@
       {{/each}}
     </ul>
   </div>
-  <div class='small-8 columns'>
+  <div class='small-6 columns end'>
     {{outlet}}
   </div>
 <div>
