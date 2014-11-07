@@ -5,7 +5,10 @@ moduleFor 'serializer:user', 'UserSerializer', {
   # needs: ['serializer:foo']
 }
 
-# Replace this with your real tests.
 test 'it exists', ->
   serializer = @subject()
   ok serializer
+
+test 'normalize returns correct info', ->
+  normalized_hash = @subject().normalize('user', {login: 'wycats', repos_url: 'http://a.url', notIncluded: true})
+  deepEqual normalized_hash, { id: 'wycats', userName: 'wycats', links: { repositories: 'http://a.url' }}
