@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='small-4 columns users-list'>
+  <div class='medium-4 columns users-list'>
     <div class='row collapse'>
       <div class='small-10 columns'>
         {{input-eventable placeholder='Enter github username ...' value=newUsername onKey='userNameOnKey'}}
@@ -11,13 +11,13 @@
     {{#if errorMessage}}
       <div class='error'>{{errorMessage}}</div>
     {{/if}}
-    <ul>
+    <ul class='show-for-medium-up'>
       {{#each}}
         <li>{{#link-to 'user' userName }}{{userName}}{{/link-to}}</li>
       {{/each}}
     </ul>
   </div>
-  <div class='small-6 columns'>
+  <div class='medium-6 columns'>
     {{outlet}}
   </div>
 <div>
