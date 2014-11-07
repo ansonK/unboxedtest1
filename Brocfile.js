@@ -17,4 +17,10 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+if(app.env === 'development' || app.env === 'test'){
+  // app.import('bower_components/jquery-mockjax/jquery.mockjax.js');
+  app.import('bower_components/ember-data-factory-guy/dist/ember-data-factory-guy.js');
+  app.import('bower_components/sinonjs/sinon.js');
+}
+
 module.exports = app.toTree();
