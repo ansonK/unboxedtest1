@@ -2,15 +2,13 @@
 `import startApp from '../helpers/start-app'`
 
 App = null
-helper = null
 
 module 'Acceptance: Users',
   setup: ->
     App = startApp()
-    helper = TestHelper.setup App
 
   teardown: ->
-    Ember.run -> helper.teardown()
+    $.mockjaxClear()
     Ember.run App, App.destroy
 
 test 'displays no users by default', ->
