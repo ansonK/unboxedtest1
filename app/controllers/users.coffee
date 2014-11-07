@@ -21,6 +21,7 @@ UsersController = Ember.ArrayController.extend
           @transitionToRoute 'user', user
 
         , (error) =>
+          console.log error
           @set 'errorMessage', 'does not appear to be a valid github username'
 
 `export default UsersController`

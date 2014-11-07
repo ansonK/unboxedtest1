@@ -2,7 +2,7 @@
 
 moduleForModel 'repository', 'Repository', {
   # Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:user']
 }
 
 test 'it exists', ->
